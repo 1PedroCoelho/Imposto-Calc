@@ -5,17 +5,41 @@ def CarneLeao(faturamento):
     if(faturamento<=2428.80):
         return print("Isento")
     elif(faturamento>=2.428,81 & faturamento<=2826.65):
-        return print(f"Imposto a pagar: {(faturamento*0.075)-182.16}")
+        return print(f"Imposto a pagar: R${(faturamento*0.075)-182.16:.2f}")
     elif(faturamento>=2826.66 & faturamento<=3751.05):
-        return print(f"Imposto a pagar: {(faturamento*0.15)-394.16}")
+        return print(f"Imposto a pagar: R${(faturamento*0.15)-394.16}")
     elif(faturamento>=3751.06 & faturamento<=4664.68):
-        return print(f"Imposto a pagar: {(faturamento*0.225)-675.49}")
+        return print(f"Imposto a pagar: R${(faturamento*0.225)-675.49}")
     else:
-        return print(f"Imposto a pagar {(faturamento*0.275)-908.73}")
+        return print(f"Imposto a pagar R${(faturamento*0.275)-908.73:.2f}")
 
-def SimplesNacional(faturamento):
-    if()
+def SimplesNacionalAnexoV(faturamento):
+    Fat12=faturamento*12
+    if(Fat12<=180000):
+        return print(f"Imposto a pagar: R${faturamento*0.155}")
+    elif(Fat12>180000 & Fat12<=360000):
+        AliquotaEfetiva= ((Fat12*0.18)-4500)/Fat12
+        return print(f"Imposto a pagar: R${faturamento*AliquotaEfetiva:.2f}, faturamento {faturamento} Aliquota efetiva {AliquotaEfetiva*100:.2f}%")
+    elif(Fat12>360000 & Fat12<=720000):
+        AliquotaEfetiva= ((Fat12*0.195)-9900)/Fat12
+        return print(f"Imposto a pagar: {faturamento*AliquotaEfetiva:.2f}, faturamento {faturamento} Aliquota efetiva {AliquotaEfetiva*100:.2f}%")
+    elif(Fat12>720000 & Fat12<=1800000):
+        AliquotaEfetiva= ((Fat12*0.205)-17100)/Fat12
+        return print(f"Imposto a pagar: {faturamento*AliquotaEfetiva:.2f}, faturamento {faturamento} Aliquota efetiva {AliquotaEfetiva*100:.2f}%")
+    elif(Fat12>1800000 & Fat12<=3600000):
+        AliquotaEfetiva= ((Fat12*0.23)-62100)/Fat12
+        return print(f"Imposto a pagar: {faturamento*AliquotaEfetiva:.2f}, faturamento {faturamento} Aliquota efetiva {AliquotaEfetiva*100:.2f}%")
+    elif(Fat12>3600000 & Fat12<=4800000):
+        AliquotaEfetiva= ((Fat12*0.305)-540000)/Fat12
+        return print(f"Imposto a pagar: {faturamento*AliquotaEfetiva:.2f}, faturamento {faturamento} Aliquota efetiva {AliquotaEfetiva*100:.2f}%")
 
 
 
+
+
+
+
+print("Carnê Leão")
 CarneLeao(faturamento)
+print(f"Anexo V")
+SimplesNacionalAnexoV(faturamento)
