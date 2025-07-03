@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Imposto</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form>
+        <label for="faturamento">Faturamento</label>
+        <input type="number" placeholder="Informe seu faturamento" id="faturamento">
+        <br><br>
+    </form>
+
+    <button onclick="MostrarCarne();MostraFat();MostrarAnexoV();MostrarAnexoIII();MostraLucroPresumido()">Enviar</button>
+
+    <h2 id="MostraFat"></h2>
+    <div class="linha container">
+        <div>
+            <h2>Carnê Leão</h2>
+            <p id="impostocarne"></p>
+        </div>
+        <div>
+            <h2>Simples Nacional Anexo V</h2>
+            <p id="impostoanexov"></p>
+        </div>
+        <div>
+            <h2>Simples Nacional Anexo III</h2>
+            <p id="impostoanexoIII"></p>
+            <p id="folhamin"></p>
+        </div>
+        <div>
+            <h2>Lucro Presumido</h2>
+            <p>Sem equiparação hospitalar:</p>
+            <p id="lucropresumido"></p>
+            <p>Com equiparação hospitalar</p>
+            <p id="lucroequipa"></p>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>

@@ -1,5 +1,4 @@
 
-var faturamento=10000;
 function CarneLeao(faturamento)
 {
     if(faturamento<=2428.80)
@@ -102,4 +101,36 @@ function LucroPresumido(faturamento, Equipara)
     {
         return faturamento*0.1093
     }
+}
+function MostraFat()
+{
+var faturamento= document.getElementById("faturamento").value;
+document.getElementById("MostraFat").innerHTML="Faturamento: R$"+ faturamento;
+}
+function MostrarCarne()
+{
+    const valor = parseFloat(document.getElementById("faturamento").value);
+    const resultado = CarneLeao(valor);
+    document.getElementById("impostocarne").innerText ="Imposto R$:" + resultado.toFixed(2);
+}
+function MostrarAnexoV()
+{
+    const valor = parseFloat(document.getElementById("faturamento").value);
+    const resultado = SimplesNacionalAnexoV(valor);
+    document.getElementById("impostoanexov").innerText ="Imposto: R$" + resultado.toFixed(2);
+}
+function MostrarAnexoIII()
+{
+    const valor = parseFloat(document.getElementById("faturamento").value);
+    const resultado = SimplesNacionalAnexoIII(valor);
+    document.getElementById("impostoanexoIII").innerText ="Imposto: R$" + resultado.toFixed(2);
+    document.getElementById("folhamin").innerText ="Folha mínima: R$"+(valor*0.28).toFixed(2);
+}
+function MostraLucroPresumido()
+{
+    const valor = parseFloat(document.getElementById("faturamento").value);
+    const resultado= LucroPresumido(valor,true);
+    document.getElementById("lucropresumido").innerText= "Imposto: R$"+resultado;
+    const resultado2= LucroPresumido(valor,false);
+    document.getElementById("lucroequipa").innerText="Imposto: R$"+resultado2;
 }
