@@ -1,6 +1,7 @@
 faturamento = 10000
-
-
+Folha= 2000
+fatorR= (Folha/faturamento)
+SimplesNacional= True
 def CarneLeao(faturamento):
     if(faturamento<=2428.80):
         return print("Isento")
@@ -54,13 +55,16 @@ def SimplesNacionalAnexoIII(faturamento):
         return print(f"Imposto a pagar: {faturamento*AliquotaEfetiva:.2f}, faturamento {faturamento} Aliquota efetiva {AliquotaEfetiva*100:.2f}%")
 
 
-
-
-
-
-print("Carnê Leão")
-CarneLeao(faturamento)
-print(f"Anexo V")
-SimplesNacionalAnexoV(faturamento)
-print("Anexo III")
-SimplesNacionalAnexoIII(faturamento)
+if(SimplesNacional):
+    if(fatorR>=0.28):
+        print("------ Anexo III ------")
+        print(f"Fator R: {fatorR}, Folha: {Folha}, Faturamento: {faturamento}")
+        SimplesNacionalAnexoIII(faturamento)
+    else:
+        print("------ Anexo V ------")
+        print(f"Fator R: {fatorR}, Folha: {Folha}, Faturamento: {faturamento}")
+        SimplesNacionalAnexoV(faturamento)
+else:
+    print("---- Carnê Leão ----")
+    CarneLeao(faturamento)
+    
